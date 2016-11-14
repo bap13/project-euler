@@ -1,0 +1,1 @@
+puts IO.read("p042_words.txt").split(",").map { |word| word.gsub(/\"/, "") }.select { |word| (1..50).map { |n| (1..n).reduce(:+) }.include?(word.split("").reduce(0) { |score, letter| score + letter.ord - 64 }) }.length
